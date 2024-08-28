@@ -9,8 +9,8 @@ RUN apt-get update && \
 # Expose port 80 to the outside world
 EXPOSE 80
 
-# Copy the static ToDo app files to the Apache server directory
-COPY ./fashion/ /var/www/html/
+# Copy the static fashion app files to the Apache server directory
+COPY fashion-html/ /var/www/html/
 
 # Start Apache in the foreground
 CMD ["apache2ctl", "-D", "FOREGROUND"]
