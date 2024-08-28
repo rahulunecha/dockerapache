@@ -7,10 +7,11 @@ RUN apt-get update && \
     apt-get clean
 
 # Expose port 80 to the outside world
+WORKDIR /var/www/html
 EXPOSE 80
 
 # Copy the static fashion app files to the Apache server directory
-COPY fashion/2127_little_fashion /var/www/html/
+COPY fashion/2127_little_fashion/ /var/www/html/
 
 # Start Apache in the foreground
 CMD ["apache2ctl", "-D", "FOREGROUND"]
